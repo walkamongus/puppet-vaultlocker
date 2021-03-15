@@ -1,0 +1,13 @@
+---
+vaultlocker::package_ensure: 'present'
+vaultlocker::package_url: false
+vaultlocker::manage_python: true
+vaultlocker::python_params:
+  version: '3'
+  pip: 'present'
+  virtualenv: 'present'
+vaultlocker::config: {}
+vaultlocker::proxy: ~
+vaultlocker::encrypted_block_devices: []
+vaultlocker::pip_env_variables: []
+vaultlocker::cmd_env_variables: []
