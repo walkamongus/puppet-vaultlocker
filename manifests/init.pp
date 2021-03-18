@@ -7,6 +7,7 @@
 class vaultlocker (
   Variant[Enum[present, absent, latest], String[1]] $package_ensure,
   Variant[Boolean, String] $package_url,
+  Array $pip_env_variables,
   Boolean $manage_python,
   Hash $python_params,
   Hash[String, String] $config,
@@ -17,6 +18,7 @@ class vaultlocker (
   class { 'vaultlocker::install':
     package_ensure => $package_ensure,
     package_url    => $package_url,
+    env_variables  => $pip_env_variables,
     manage_python  => $manage_python,
     python_params  => $python_params,
     proxy          => $proxy,

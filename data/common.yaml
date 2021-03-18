@@ -9,3 +9,4 @@ vaultlocker::python_params:
 vaultlocker::config: {}
 vaultlocker::proxy: ~
 vaultlocker::encrypted_block_devices: []
+vaultlocker::pip_env_variables: []

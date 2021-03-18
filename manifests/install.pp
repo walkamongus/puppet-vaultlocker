@@ -7,6 +7,7 @@
 class vaultlocker::install (
   $package_ensure,
   $package_url,
+  $env_variables,
   $manage_python,
   $python_params,
   $proxy,
@@ -21,12 +22,13 @@ class vaultlocker::install (
   }
 
   python::pip { 'vaultlocker' :
-    ensure  => $package_ensure,
-    pkgname => 'vaultlocker',
-    url     => $package_url,
-    owner   => 'root',
-    timeout => 1800,
-    proxy   => $proxy,
+    ensure      => $package_ensure,
+    pkgname     => 'vaultlocker',
+    url         => $package_url,
+    environment => $env_variables,
+    owner       => 'root',
+    timeout     => 1800,
+    proxy       => $proxy,
   }
 
 }
