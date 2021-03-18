@@ -1,5 +1,6 @@
 ---
 vaultlocker::package_ensure: 'present'
+vaultlocker::package_url: false
 vaultlocker::manage_python: true
 vaultlocker::python_params:
   version: '3'

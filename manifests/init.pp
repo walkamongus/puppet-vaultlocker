@@ -6,6 +6,7 @@
 #   include vaultlocker
 class vaultlocker (
   Variant[Enum[present, absent, latest], String[1]] $package_ensure,
+  Variant[Boolean, String] $package_url,
   Boolean $manage_python,
   Hash $python_params,
   Hash[String, String] $config,
@@ -15,6 +16,7 @@ class vaultlocker (
 
   class { 'vaultlocker::install':
     package_ensure => $package_ensure,
+    package_url    => $package_url,
     manage_python  => $manage_python,
     python_params  => $python_params,
     proxy          => $proxy,
